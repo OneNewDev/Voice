@@ -12,52 +12,11 @@ on:
 
 env:
   GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx3072m -XX:MaxMetaspaceSize=1g -Xms512m -XX:+HeapDumpOnOutOfMemoryError"
-  ANDROID_PUBLISHER_CREDENTIALS: ${{ secrets.ANDROID_PUBLISHER_CREDENTIALS }}
-  SIGNING_KEYSTORE_PLAY: ${{ secrets.SIGNING_KEYSTORE }}
-  SIGNING_PROPERTIES_PLAY: ${{ secrets.SIGNING_PROPERTIES }}
   SIGNING_KEYSTORE_GITHUB: ${{ secrets.SIGNING_KEYSTORE_GITHUB }}
   SIGNING_PROPERTIES_GITHUB: ${{ secrets.SIGNING_PROPERTIES_GITHUB }}
-  GOOGLE_SERVICES: ${{ secrets.GOOGLE_SERVICES }}
-  VOICE_USE_PROPRIETARY_LIBRARIES: "true"
+  VOICE_USE_PROPRIETARY_LIBRARIES: "false"
 
 jobs:
-  test:
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-
-      - name: Set up JDK
-        uses: actions/setup-java@v4.0.0
-        with:
-          distribution: 'zulu'
-          java-version: 17
-
-      - name: Setup Signing
-        run: ./ci_signing_setup.sh
-
-      - name: Test
-        run: ./gradlew testDebugUnitTest lintKotlin :app:lintDebug :app:assembleDebug :scripts:build
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: "Artifacts"
-          path: |
-            artifacts/
-            app/build/reports/*.html
-            app/build/outputs/apk/debug/app-debug.apk
-
-      - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v4
-        if: always()
-        with:
-          report_paths: '**/test-results/**/TEST-*.xml'
-
   release:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
     timeout-minutes: 60
@@ -77,11 +36,8 @@ jobs:
       - name: Setup Signing
         run: ./ci_signing_setup.sh
 
-      - name: Publish to Google Play
-        run: ./gradlew app:publishReleaseBundle -Pvoice.signing.play=true
-
       - name: Build Github APK
-        run: ./gradlew app:assembleRelease -Pvoice.signing.play=false
+        run: ./gradlew app:assembleRelease
 
       - name: Github Release
         uses: softprops/action-gh-release@v1

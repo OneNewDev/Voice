@@ -15,13 +15,7 @@ decode_env_to_file() {
   fi
 }
 
-mkdir -p signing/play
 mkdir -p signing/github
-
-decode_env_to_file "SIGNING_KEYSTORE_PLAY" "signing/play/signing.keystore"
-decode_env_to_file "SIGNING_PROPERTIES_PLAY" "signing/play/signing.properties"
 
 decode_env_to_file "SIGNING_KEYSTORE_GITHUB" "signing/github/signing.keystore"
 decode_env_to_file "SIGNING_PROPERTIES_GITHUB" "signing/github/signing.properties"
-
-decode_env_to_file "GOOGLE_SERVICES" "app/google-services.json"
