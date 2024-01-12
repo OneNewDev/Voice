@@ -6,6 +6,6 @@
     <intent
       android:action="playCurrent"
       android:targetClass="voice.app.features.MainActivity"
-      android:targetPackage="de.ph1b.audiobook" />
+      android:targetPackage="de.onenewdev.audiobook" />
   </shortcut>
 </shortcuts>

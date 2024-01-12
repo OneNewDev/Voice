@@ -50,7 +50,7 @@ android {
   }
 
   defaultConfig {
-    applicationId = "de.ph1b.audiobook"
+    applicationId = "de.onenewdev.audiobook"
     versionCode = libs.versions.versionCode.get().toInt()
     versionName = libs.versions.versionName.get()
 
