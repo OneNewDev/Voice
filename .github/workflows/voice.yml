@@ -12,7 +12,6 @@ env:
   GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx3072m -XX:MaxMetaspaceSize=1g -Xms512m -XX:+HeapDumpOnOutOfMemoryError"
   SIGNING_KEYSTORE_GITHUB: ${{ secrets.SIGNING_KEYSTORE_GITHUB }}
   SIGNING_PROPERTIES_GITHUB: ${{ secrets.SIGNING_PROPERTIES_GITHUB }}
-  GOOGLE_SERVICES: ${{ secrets.GOOGLE_SERVICES }}
   VOICE_USE_PROPRIETARY_LIBRARIES: "false"
 
 jobs:
@@ -42,6 +41,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          files: |
-            app/build/outputs/apk/githubProprietary/release/app-github-proprietary-release.apk
-            app/build/outputs/apk/githubLibre/release/app-github-libre-release.apk
+          files: app/build/outputs/apk/githubLibre/release/app-github-libre-release.apk
