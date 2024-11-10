@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="cover">Обложка</string>
-    <string name="play_pause">Читать — пауза</string>
+    <string name="play_pause">Воспроизведение / Пауза</string>
     <string name="action_sleep">Таймер сна</string>
     <string name="rewind">Перемотать назад</string>
     <string name="fast_forward">Перемотать вперед</string>
@@ -20,14 +20,12 @@
     <string name="mark_as_current">Пометить как открытую</string>
     <string name="mark_as_not_started">Пометить как непрослушанную</string>
     <string name="audiobook_folders_title">Папки с аудиокнигами</string>
-    <string name="playback_speed">Скорость чтения</string>
-    <string name="bookmark">Закладки</string>
-    <string name="bookmark_edit_title">Редактировать</string>
+    <string name="playback_speed">Скорость воспроизведения</string>
+    <string name="bookmark">Закладка</string>
+    <string name="bookmark_edit_title">Редактировать закладку</string>
     <string name="bookmark_edit_hint">Имя закладки</string>
     <string name="bookmark_added">Закладка добавлена</string>
     <string name="action_settings">Настройки</string>
-    <string name="min">%s мин</string>
-    <string name="delete_last_number">Удаляет последнее введенное число</string>
     <plurals name="seconds">
         <item quantity="one">%d секунда</item>
         <item quantity="few">%d секунды</item>
@@ -45,14 +43,13 @@
     <string name="pref_app_version">Версия приложения</string>
     <string name="popup_edit">Редактировать</string>
     <string name="remove">Удалить</string>
-    <string name="play_current">Читать открытую</string>
+    <string name="play_current">Воспроизвести текущую</string>
     <string name="book_header_current">Слушаю</string>
     <string name="book_header_not_started">Непрослушанные</string>
     <string name="book_header_completed">Прослушанные</string>
     <string name="close">Закрыть</string>
     <string name="delete">Удалить</string>
     <string name="add">Добавить</string>
-    <string name="folder_type_dialog_title">Что добавить?</string>
     <string name="folder_mode_root">Книжный режим верхнего уровня: подпапки — это книги</string>
     <string name="folder_mode_single">Режим одной книги: одна папка соответствует одной книге.</string>
     <plurals name="folder_type_file_count">
@@ -90,7 +87,7 @@
     <string name="search_hint">Что вы ищете?</string>
     <string name="battery_optimization_rationale">Чтение может прерываться из-за настроек управления расходом заряда батареи.</string>
     <string name="battery_optimization_action">Обновить</string>
-    <string name="play">Усиление звука</string>
+    <string name="play">Воспроизведение</string>
     <string name="more">Больше</string>
     <string name="generic_error_retry">Повторить</string>
     <string name="storage_bug_button">Предоставить разрешение</string>
@@ -102,8 +99,8 @@
     <string name="generic_error_message">Что-то пошло не так 😢</string>
     <string name="media_session_root">Все аудиокниги</string>
     <string name="folder_mode_author">Режим автор-книга: подпапки - авторы, подподпапки - книги.</string>
-    <string name="cover_search_template_no_author">%s обложек аудиокниг</string>
-    <string name="cover_search_template_with_author">%1$s из %2$s обложек аудиокниг</string>
+    <string name="cover_search_template_no_author">Обложка аудиокниги %s</string>
+    <string name="cover_search_template_with_author">Обложка аудиокниги %1$s автора %2$s</string>
     <string name="pause">Пауза</string>
     <string name="review.request.button.yes">Оценить сейчас</string>
     <string name="review.request.button.no">Нет, спасибо</string>
@@ -135,4 +132,6 @@
         <item quantity="many">%d минут</item>
         <item quantity="other">%d минут</item>
     </plurals>
+    <string name="sleep_timer.button.increment">Дольше</string>
+    <string name="sleep_timer.button.decrement">Короче</string>
 </resources>

@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="cover">Cover</string>
-    <string name="play_pause">Abspielen / Pause</string>
+    <string name="cover">Titelbild</string>
+    <string name="play_pause">Abspielen / Pausieren</string>
     <string name="action_sleep">Einschlaf-Timer</string>
     <string name="rewind">Zurückspulen</string>
     <string name="fast_forward">Vorspulen</string>
     <string name="previous_track">Vorheriger Track</string>
-    <string name="next_track">Nächster Track</string>
+    <string name="next_track">Nächster Titel</string>
     <string name="skip_silence">Stille überspringen</string>
-    <string name="volume_boost">Lautstärke Boost</string>
+    <string name="volume_boost">Lautstärke erhöhen</string>
     <string name="more">Mehr</string>
     <string name="dialog_confirm">Okay</string>
     <string name="dialog_cancel">Abbrechen</string>
-    <string name="content_cover">Zeigt aktuelles Cover an</string>
+    <string name="content_cover">Zeigt aktuelles Titelbild an</string>
     <string name="change_book_name">Name</string>
-    <string name="download_book_cover">Cover (Internet)</string>
-    <string name="pick_book_cover">Cover (Lokal)</string>
+    <string name="download_book_cover">Titelbild aus dem Internet</string>
+    <string name="pick_book_cover">Titelbild aus dem Dateisystem</string>
     <string name="edit_book_title">Buch bearbeiten</string>
     <string name="mark_as_completed">Als \"Abgeschlossen\" markieren</string>
     <string name="mark_as_current">Als \"Aktuelles\" markieren</string>
     <string name="mark_as_not_started">Als \"Neu\" markieren</string>
     <string name="audiobook_folders_title">Hörbuch Ordner</string>
-    <string name="playback_speed">Geschwindigkeit</string>
+    <string name="playback_speed">Abspielgeschwindigkeit</string>
     <string name="bookmark">Lesezeichen</string>
     <string name="bookmark_edit_title">Lesezeichen bearbeiten</string>
     <string name="bookmark_edit_hint">Lesezeichenname</string>
     <string name="bookmark_added">Lesezeichen hinzugefügt</string>
     <string name="action_settings">Einstellungen</string>
-    <string name="min">%s min</string>
-    <string name="delete_last_number">Löscht die zuletzt eingegebene Zahl</string>
     <plurals name="seconds">
         <item quantity="one">%d Sekunde</item>
         <item quantity="other">%d Sekunden</item>
@@ -43,7 +41,7 @@
     <string name="pref_get_support">Erhalte Unterstützung</string>
     <string name="pref_app_version">App Version</string>
     <string name="popup_edit">Bearbeiten</string>
-    <string name="remove">Löschen</string>
+    <string name="remove">Entfernen</string>
     <string name="play_current">Spiel aktuelles</string>
     <string name="book_header_current">Aktuelles</string>
     <string name="book_header_not_started">Neu</string>
@@ -51,7 +49,6 @@
     <string name="close">Schließen</string>
     <string name="delete">Löschen</string>
     <string name="add">Hinzufügen</string>
-    <string name="folder_type_dialog_title">Was möchtest du hinzufügen?</string>
     <string name="folder_mode_root">Buch-Modus auf oberster Ebene: Unterordner sind Bücher</string>
     <string name="folder_mode_single">Einzelbuchmodus: Ein Ordner entspricht einem Buch.</string>
     <plurals name="folder_type_file_count">
@@ -95,11 +92,10 @@
     <string name="notification_sleep_timer_disable">Einschlaftimer ausschalten</string>
     <string name="play">Abspielen</string>
     <string name="pause">Pause</string>
-    <string name="end_of_chapter">Kapitelende</string>
     <string name="generic_error_message">Etwas ist schief gelaufen 😢</string>
     <string name="generic_error_retry">Erneut versuchen</string>
-    <string name="cover_search_template_with_author">%1$s von %2$s Hörbuch cover</string>
-    <string name="cover_search_template_no_author">%s Hörbuch cover</string>
+    <string name="cover_search_template_with_author">%1$s von %2$s Hörbuch Titelbild</string>
+    <string name="cover_search_template_no_author">%s Hörbuch Titelbild</string>
     <string name="storage_bug_title">Berechtigung benötigt</string>
     <string name="storage_bug_subtitle">Für bestimmte Geräte fehlt einer System-App die notwendige Berechtigung, auf den externen Speicher zuzugreifen. Dieser Zugriff ist jedoch für Voice essentiell, um Ihre Hörbücher lesen zu können.</string>
     <string name="storage_bug_button">Berechtigung erteilen</string>
@@ -123,8 +119,15 @@
     <string name="review.request.button.no">Nein, danke</string>
     <string name="review.feedback.button.yes">Feedback senden</string>
     <string name="review.feedback.button.no">Abbrechen</string>
-    <string name="review.request.title">Gefällt Ihnen Voice\?</string>
-    <string name="review.request.content">Ihr Feedback ist uns wichtig! Wenn Sie einen Moment Zeit haben, bewerten Sie uns und teilen Sie Ihre Erfahrungen. Es hilft uns, Verbesserungen vorzunehmen und ein besseres Hörerlebnis zu bieten.</string>
+    <string name="review.request.title">Gefällt dir Voice\?</string>
+    <string name="review.request.content">Deine Meinung ist uns wichtig! Wenn du einen Moment Zeit hast, bewerte uns und teile deine Erfahrungen. Das hilft uns dabei, Verbesserungen vorzunehmen und ein besseres Hörerlebnis zu bieten.</string>
     <string name="review.feedback.title">Es tut uns leid, das zu hören!</string>
-    <string name="review.feedback.content">Könnten Sie uns sagen, was schief gelaufen ist\? Wir schätzen Ihr Feedback und es hilft uns, Ihre Erfahrung zu verbessern.</string>
+    <string name="review.feedback.content">Kannst du uns mitteilen, was falsch gelaufen ist\? Wir schätzen dein Feedback sehr, es hilft uns dabei, dein Erlebnis zu verbessern.</string>
+    <string name="sleep_timer.title">Schlaf gut! 🌙</string>
+    <string name="sleep_timer.button.increment">Länger</string>
+    <string name="sleep_timer.button.decrement">Kürzer</string>
+    <plurals name="minutes">
+        <item quantity="one">%d Minute</item>
+        <item quantity="other">%d Minuten</item>
+    </plurals>
 </resources>

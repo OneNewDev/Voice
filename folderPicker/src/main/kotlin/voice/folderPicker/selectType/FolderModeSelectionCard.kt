@@ -25,7 +25,7 @@ import voice.strings.R as StringsR
 
 @Composable
 internal fun FolderModeSelectionCard(
-  onFolderModeSelected: (FolderMode) -> Unit,
+  onFolderModeSelect: (FolderMode) -> Unit,
   selectedFolderMode: FolderMode,
 ) {
   Card(
@@ -37,8 +37,8 @@ internal fun FolderModeSelectionCard(
       modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
       verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-      FolderMode.values().forEach { folderMode ->
-        val selectFolder = { onFolderModeSelected(folderMode) }
+      FolderMode.entries.forEach { folderMode ->
+        val selectFolder = { onFolderModeSelect(folderMode) }
         FolderModeColumn(selectFolder = selectFolder, selectedFolderMode = selectedFolderMode, folderMode = folderMode)
       }
     }
@@ -92,7 +92,7 @@ private fun FolderMode.title(): Int {
 private fun FolderModeSelectionCardPreview() {
   VoiceTheme {
     FolderModeSelectionCard(
-      onFolderModeSelected = {},
+      onFolderModeSelect = {},
       selectedFolderMode = FolderMode.Audiobooks,
     )
   }

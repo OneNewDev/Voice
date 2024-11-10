@@ -10,8 +10,6 @@ import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-// declared in the build.gradle.file
-@Suppress("unused")
 class ComposePlugin : Plugin<Project> {
 
   override fun apply(target: Project) {
@@ -27,14 +25,12 @@ class ComposePlugin : Plugin<Project> {
     }
   }
 
-  private fun configureCompose(extension: CommonExtension<*, *, *, *, *>, target: Project) {
+  private fun configureCompose(extension: CommonExtension<*, *, *, *, *, *>, target: Project) {
     val libs = target.extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
     target.dependencies.add("implementation", libs.findBundle("compose").get())
     target.dependencies.add("debugImplementation", libs.findLibrary("compose-ui-tooling-core").get())
+    target.plugins.apply("org.jetbrains.kotlin.plugin.compose")
     extension.buildFeatures.compose = true
-    extension.composeOptions {
-      kotlinCompilerExtensionVersion = libs.findVersion("compose-compiler").get().requiredVersion
-    }
     target.tasks.withType<KotlinCompile> {
       kotlinOptions {
         freeCompilerArgs = freeCompilerArgs + listOf(

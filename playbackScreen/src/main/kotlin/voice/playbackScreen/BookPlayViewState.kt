@@ -12,12 +12,12 @@ data class BookPlayViewState(
   val chapterName: String?,
   val showPreviousNextButtons: Boolean,
   val title: String,
+  val sleepTime: Duration,
   val playedTime: Duration,
   val duration: Duration,
   val playing: Boolean,
   val cover: ImmutableFile?,
   val skipSilence: Boolean,
-  val sleepTimer: SleepTimerViewState?,
 ) {
 
   init {
@@ -25,18 +25,10 @@ data class BookPlayViewState(
       "Duration must be positive in $this"
     }
   }
-
-  @Immutable
-  sealed interface SleepTimerViewState {
-    data object SleepAtEndOfChapter : SleepTimerViewState
-    data class SleepAfterDuration(val remaining: Duration) : SleepTimerViewState
-  }
 }
 
 internal sealed interface BookPlayDialogViewState {
-  data class SpeedDialog(
-    val speed: Float,
-  ) : BookPlayDialogViewState {
+  data class SpeedDialog(val speed: Float) : BookPlayDialogViewState {
 
     val maxSpeed: Float get() = if (speed < 2F) 2F else 3.5F
   }
@@ -53,7 +45,5 @@ internal sealed interface BookPlayDialogViewState {
   ) : BookPlayDialogViewState
 
   @JvmInline
-  value class SleepTimer(
-    val viewState: SleepTimerViewState,
-  ) : BookPlayDialogViewState
+  value class SleepTimer(val viewState: SleepTimerViewState) : BookPlayDialogViewState
 }

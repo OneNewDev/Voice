@@ -12,7 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -28,11 +28,11 @@ import voice.strings.R as StringsR
 
 @Composable
 internal fun AskForReviewDialog(
-  onReviewed: (Int) -> Unit,
-  onReviewDenied: () -> Unit,
+  onReview: (Int) -> Unit,
+  onReviewDeny: () -> Unit,
   onDismiss: () -> Unit,
 ) {
-  var selectedStars by remember { mutableStateOf(5) }
+  var selectedStars by remember { mutableIntStateOf(5) }
   AlertDialog(
     onDismissRequest = onDismiss,
     title = {
@@ -70,14 +70,14 @@ internal fun AskForReviewDialog(
       }
     },
     dismissButton = {
-      TextButton(onClick = onReviewDenied) {
+      TextButton(onClick = onReviewDeny) {
         Text(stringResource(StringsR.string.review_request_button_no))
       }
     },
     confirmButton = {
       TextButton(
         onClick = {
-          onReviewed(selectedStars)
+          onReview(selectedStars)
         },
       ) {
         Text(stringResource(StringsR.string.review_request_button_yes))
@@ -90,8 +90,8 @@ internal fun AskForReviewDialog(
 @Preview
 private fun AskForReviewDialogPreview() {
   AskForReviewDialog(
-    onReviewed = {},
-    onReviewDenied = {},
+    onReview = {},
+    onReviewDeny = {},
     onDismiss = {},
   )
 }
